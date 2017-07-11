@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'everydayFresh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'everydayFresh',
+        'NAME': 'everydayFreshdb',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'djangodb',
-        'PASSWORD': 'pythonl',
+        'PASSWORD': 'diligent',
     }
 }
 

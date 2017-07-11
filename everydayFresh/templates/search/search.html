@@ -1,0 +1,38 @@
+{%extends 'ttsx_goods/base.html'%}
+{% block right_left %}
+            <ul class="goods_type_list clearfix">
+				{%for goods in page_obj%}
+				<li>
+					<a href="/{{goods.object.id}}/"><img src="/static/{{goods.object.gpic}}"></a>
+					<h4><a href="/{{goods.object.id}}/">{{goods.object.gtitle}}</a></h4>
+					<div class="operate">
+						<span class="prize">￥{{goods.object.gprice}}</span>
+						<span class="unit">{{goods.object.gprice}}/{{goods.object.gunit}}</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+				</li>
+                {%empty%}
+                    <li>啥也没找到</li>
+				{%endfor%}
+			</ul>
+
+			<div class="pagenation">
+
+				{%if page_obj.has_previous%}
+				<a href="?q={{query}}&amp;page={{pindex}}"><上一页</a>
+				{%endif%}
+
+				{%for pindex in page_range%}
+				{%if pindex == page_obj.number%}
+				<a href="#" class="active">{{pindex}}</a>
+				{%else%}
+				<a href="?q={{query}}&amp;page={{pindex}}">{{pindex}}</a>
+				{%endif%}
+				{%endfor%}
+
+				{%if page_obj.has_next%}
+				<a href="?q={{query}}&amp;page={{pindex}}">下一页></a>
+				{%endif%}
+
+			</div>
+{% endblock right_left %}
