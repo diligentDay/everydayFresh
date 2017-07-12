@@ -1,4 +1,4 @@
-{%extends 'ttsx_goods/base.html'%}
+{%extends 'goods/base.html'%}
 
 {%block detail%}
 	<div class="breadcrumb">
@@ -12,7 +12,7 @@
 		<div class="r_wrap fr clearfix">
 			<div class="sort_bar">
 				<a href="/list{{tid}}_{{pindex}}_1/" {%if orderby = '1'%}class="active"{%endif%}>默认</a>
-				<a href="/list{{tid}}_{{pindex}}_2/?desc={%if desc = 1%}2{% else %}1{%endif%}" {%if orderby = '2'%}class="active"{%endif%}>价格</a>
+				<a href="/list{{tid}}_{{pindex}}_2/?desc={%if desc = '1'%}2{% else %}1{%endif%}" {%if orderby = '2'%}class="active"{%endif%}>价格</a>
 				<a href="/list{{tid}}_{{pindex}}_3/" {%if orderby = '3'%}class="active"{%endif%}>人气</a>
 			</div>
 
